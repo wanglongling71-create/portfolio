@@ -33,12 +33,12 @@ const featured = projects
               title={project.data.title}
               description={project.data.description}
               tags={project.data.tags}
-              href={import.meta.env.BASE_URL + 'projects/' + project.id}
+              href={import.meta.env.BASE_URL + '/projects/' + project.id}
             />
           ))}
         </div>
         <div class="view-all">
-          <a href={import.meta.env.BASE_URL + 'projects'}>查看全部项目 &rarr;</a>
+          <a href={import.meta.env.BASE_URL + '/projects'}>查看全部项目 &rarr;</a>
         </div>
       </section>
     )
