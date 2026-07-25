@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SkillCategory from '../components/SkillCategory.astro';
+import site from '../data/site.json';
+---
+
+<BaseLayout title="技能">
+  <section class="section container">
+    <h1 class="page-title">技术技能</h1>
+    <div class="skills-grid">
+      {site.skills.map((skill) => (
+        <SkillCategory category={skill.category} items={skill.items} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 640px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,80 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  href: string;
+}
+
+const { title, description, tags, href } = Astro.props;
+---
+
+<article class="card">
+  <a href={href} class="card-link">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </a>
+  {tags.length > 0 && (
+    <div class="tags">
+      {tags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+  )}
+</article>
+
+<style>
+  .card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .card-link {
+    display: block;
+    color: inherit;
+  }
+
+  .card-link:hover {
+    color: inherit;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+    transition: color 0.2s;
+  }
+
+  .card-link:hover h3 {
+    color: var(--color-primary-light);
+  }
+
+  p {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: var(--leading-relaxed);
+  }
+
+  .tags {
+    margin-top: var(--space-4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-primary-light);
+    background-color: var(--color-primary-lighter);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 9999px;
+  }
+</style>

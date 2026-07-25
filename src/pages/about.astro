@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TimelineItem from '../components/TimelineItem.astro';
+import site from '../data/site.json';
+---
+
+<BaseLayout title="关于我">
+  <!-- Intro -->
+  <section class="section container">
+    <h1 class="page-title">关于我</h1>
+    <div class="intro">
+      <p>{site.intro}</p>
+    </div>
+  </section>
+
+  <!-- Education Timeline -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>教育经历</h2>
+      <div class="timeline">
+        {site.education.map((item) => (
+          <TimelineItem
+            degree={item.degree}
+            school={item.school}
+            period={item.period}
+            details={item.details}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Interests -->
+  <section class="section container">
+    <h2>研究方向</h2>
+    <ul class="interests">
+      {site.researchInterests.map((interest) => (
+        <li>{interest}</li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    max-width: 40rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-8);
+  }
+
+  .timeline {
+    max-width: 40rem;
+  }
+
+  .interests {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .interests li {
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    background-color: var(--color-primary-lighter);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary-light);
+  }
+
+  @media (max-width: 640px) {
+    .interests {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+interface Props {
+  category: string;
+  items: string[];
+}
+
+const { category, items } = Astro.props;
+---
+
+<section class="skill-category">
+  <h3>{category}</h3>
+  <ul>
+    {items.map((item) => <li class="skill-pill">{item}</li>)}
+  </ul>
+</section>
+
+<style>
+  .skill-category {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--color-primary-light);
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .skill-pill {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-primary);
+    background-color: var(--color-primary-lighter);
+    padding: var(--space-1) var(--space-4);
+    border-radius: 9999px;
+    white-space: nowrap;
+  }
+</style>

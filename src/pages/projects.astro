@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => (b.data.date?.valueOf() || 0) - (a.data.date?.valueOf() || 0)
+);
+---
+
+<BaseLayout title="项目">
+  <section class="section container">
+    <h1 class="page-title">项目作品</h1>
+    {
+      projects.length > 0 ? (
+        <div class="project-grid">
+          {projects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.description}
+              tags={project.data.tags}
+              href={`/projects/${project.id}`}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="empty">暂无项目，敬请期待。</p>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .empty {
+    text-align: center;
+    color: var(--color-text-light);
+    padding-block: var(--space-16);
+  }
+
+  @media (max-width: 640px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

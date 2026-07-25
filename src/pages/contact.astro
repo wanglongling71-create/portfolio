@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactLink from '../components/ContactLink.astro';
+import site from '../data/site.json';
+---
+
+<BaseLayout title="联系">
+  <section class="section container">
+    <h1 class="page-title">联系我</h1>
+
+    <div class="contact-grid">
+      <!-- Email -->
+      <ContactLink
+        label="邮箱"
+        value={site.contact.email}
+        href={`mailto:${site.contact.email}`}
+        icon="&#9993;"
+      />
+
+      <!-- School -->
+      <div class="contact-card">
+        <span class="icon" aria-hidden="true">&#127979;</span>
+        <span class="label">学校</span>
+        <span class="value">{site.contact.school}</span>
+      </div>
+
+      <!-- Location -->
+      <div class="contact-card">
+        <span class="icon" aria-hidden="true">&#128205;</span>
+        <span class="label">地址</span>
+        <span class="value">{site.contact.location}</span>
+      </div>
+
+      <!-- Social Links -->
+      {site.contact.socialLinks.map((link) => (
+        <ContactLink
+          label={link.label}
+          value={link.url}
+          href={link.url}
+          icon="&#128279;"
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    max-width: 36rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-card .icon {
+    font-size: var(--text-xl);
+    flex-shrink: 0;
+    width: 2rem;
+    text-align: center;
+  }
+
+  .contact-card .label {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    min-width: 4rem;
+    flex-shrink: 0;
+  }
+
+  .contact-card .value {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-primary);
+    word-break: break-all;
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+const navItems = [
+  { label: '首页', href: '/' },
+  { label: '关于', href: '/about' },
+  { label: '技能', href: '/skills' },
+  { label: '项目', href: '/projects' },
+  { label: '联系', href: '/contact' },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<nav aria-label="主导航">
+  <ul>
+    {navItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class:list={[{ active: isActive(item.href) }]}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--space-1);
+  }
+
+  a {
+    display: inline-block;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-light);
+    border-radius: var(--radius-md);
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-primary-light);
+    background-color: var(--color-primary-lighter);
+  }
+
+  a.active {
+    color: var(--color-primary);
+    background-color: var(--color-primary-lighter);
+  }
+
+  @media (max-width: 640px) {
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+    }
+  }
+</style>

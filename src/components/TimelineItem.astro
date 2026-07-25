@@ -1,0 +1,95 @@
+---
+interface Props {
+  degree: string;
+  school: string;
+  period: string;
+  details: string;
+}
+
+const { degree, school, period, details } = Astro.props;
+---
+
+<div class="timeline-item">
+  <div class="timeline-marker" aria-hidden="true"></div>
+  <div class="timeline-content">
+    <span class="period">{period}</span>
+    <h3>{degree}</h3>
+    <p class="school">{school}</p>
+    <p class="details">{details}</p>
+  </div>
+</div>
+
+<style>
+  .timeline-item {
+    display: flex;
+    gap: var(--space-6);
+    position: relative;
+    padding-bottom: var(--space-8);
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  /* Vertical line */
+  .timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 0.4375rem;
+    top: 1.5rem;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-border);
+  }
+
+  .timeline-marker {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--color-primary-light);
+    border: 3px solid var(--color-primary-lighter);
+    margin-top: 0.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .period {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-1);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    color: var(--color-primary);
+    margin-bottom: var(--space-1);
+  }
+
+  .school {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-2);
+  }
+
+  .details {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+  }
+
+  @media (max-width: 640px) {
+    .timeline-item {
+      gap: var(--space-4);
+    }
+  }
+</style>

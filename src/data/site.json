@@ -1,0 +1,71 @@
+{
+  "siteName": "Portfolio",
+  "fullName": "[汪珑玲]",
+  "title": "光学工程硕士研究生",
+  "tagline": "光伏电池仿真、光电器件研究、数据采集与实验设计",
+
+  "navItems": [
+    { "label": "首页", "href": "/" },
+    { "label": "关于", "href": "/about" },
+    { "label": "技能", "href": "/skills" },
+    { "label": "项目", "href": "/projects" },
+    { "label": "联系", "href": "/contact" }
+  ],
+
+  "intro": "光学工程专业研究生，研究方向为光伏电池的光学仿真与器件优化，熟练运用 MATLAB 、 FDTD 和转移矩阵算法模拟，掌握 Labview 实验测控系统开发及 AutoCAD 光学制图，致力于将数值仿真与实验表征相结合，推动光伏器件的性能提升。",
+
+  "education": [
+    {
+      "degree": "光学工程 硕士",
+      "school": "[南京工业大学]",
+      "period": "2024 - 至今",
+      "details": "研究方向：光伏电池光学仿真、使用 FDTD 和转移矩阵法优化器件结构，研究活性层厚度、传输层配置对光吸收效率的影响。"
+    },
+    {
+      "degree": "[Major] 学士",
+      "school": "[安庆师范大学]",
+      "period": "2019 - 2023",
+      "details": "主修课程：半导体物理、模拟电子技术、数字电子方法、光电检测技术。毕业论文：[基于Labview的挂光电信号采集系统的设计]。"
+    }
+  ],
+
+  "researchInterests": [
+    "有机光伏（OPV）电池光学仿真",
+    "时域有限差分（FDTD）方法",
+    "转移矩阵法（TMM）薄膜光学计算",
+    "光电器件物理与器件优化",
+    "LabVIEW 实验测控系统开发"
+  ],
+
+  "skills": [
+    {
+      "category": "仿真计算",
+      "items": ["MATLAB", "FDTD 仿真", "转移矩阵法 (TMM)"]
+    },
+    {
+      "category": "设计制图",
+      "items": ["AutoCAD", "SolidWorks 基础", "Zemax OpticStudio 基础"]
+    },
+    {
+      "category": "实验测控",
+      "items": ["LabVIEW", "NI-DAQ 数据采集", "光谱测量", "源表 (SourceMeter)"]
+    },
+    {
+      "category": "专业知识",
+      "items": ["有机光伏器件", "半导体物理", "光学薄膜", "器件表征", "数据分析"]
+    }
+  ],
+
+  "contact": {
+    "email": "[your.email@university.edu]",
+    "school": "[School / Institute Name], [University Name]",
+    "location": "[City, Province, China]",
+    "socialLinks": [
+      { "label": "GitHub", "url": "https://github.com/[username]" },
+      { "label": "Google Scholar", "url": "https://scholar.google.com/" },
+      { "label": "ResearchGate", "url": "https://researchgate.net/" }
+    ]
+  },
+
+  "footer": "© 2026 [Your Name]. All rights reserved."
+}

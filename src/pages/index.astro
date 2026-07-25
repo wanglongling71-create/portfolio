@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+import site from '../data/site.json';
+
+const projects = await getCollection('projects');
+const featured = projects
+  .filter((p) => p.data.featured)
+  .sort(
+    (a, b) => (b.data.date?.valueOf() || 0) - (a.data.date?.valueOf() || 0)
+  );
+---
+
+<BaseLayout title="首页">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>{site.fullName}</h1>
+      <p class="subtitle">{site.title}</p>
+      <p class="tagline">{site.tagline}</p>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  {
+    featured.length > 0 && (
+      <section class="section container">
+        <h2>精选项目</h2>
+        <div class="project-grid">
+          {featured.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.description}
+              tags={project.data.tags}
+              href={`/projects/${project.id}`}
+            />
+          ))}
+        </div>
+        <div class="view-all">
+          <a href="/projects">查看全部项目 &rarr;</a>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--space-24);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-3);
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+  }
+
+  .tagline {
+    font-size: var(--text-lg);
+    color: var(--color-text-light);
+    max-width: 36rem;
+    margin-inline: auto;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-8);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .view-all {
+    margin-top: var(--space-8);
+    text-align: center;
+  }
+
+  .view-all a {
+    font-weight: var(--font-medium);
+    font-size: var(--text-sm);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero h1,
+    .subtitle,
+    .tagline {
+      animation: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-block: var(--space-16);
+    }
+
+    .hero h1 {
+      font-size: var(--text-3xl);
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

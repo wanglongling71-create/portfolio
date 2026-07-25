@@ -1,0 +1,39 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container">
+    <p>&copy; {year} All rights reserved.</p>
+    <p class="credit">
+      Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-alt);
+    padding-block: var(--space-8);
+    margin-top: auto;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  p {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+  }
+
+  .credit {
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+  }
+
+  .credit a {
+    color: var(--color-text-light);
+  }
+</style>
