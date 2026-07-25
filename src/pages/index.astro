@@ -20,10 +20,10 @@ const featured = projects
         <div class="identity">
           <p class="eyebrow">Academic Portfolio</p>
           <h1>{site.fullName}</h1>
-          <p class="subtitle">{site.title}</p>
+          <p class="subtitle">光学工程 · 研究生</p>
+          <p class="research">研究方向：光伏电池模拟，光电器件性能优化</p>
         </div>
       </div>
-      <p class="tagline">{site.tagline}</p>
     </div>
   </section>
 
@@ -86,7 +86,7 @@ const featured = projects
   }
 
   .hero h1 {
-    font-size: var(--text-4xl);
+    font-size: var(--text-3xl);
     margin-bottom: var(--space-3);
   }
 
@@ -95,12 +95,13 @@ const featured = projects
     color: var(--color-primary-light);
   }
 
-  .tagline {
+  .research {
     max-width: 42rem;
-    margin-top: var(--space-8);
-    font-size: var(--text-lg);
+    margin-top: var(--space-6);
+    font-size: var(--text-base);
     color: var(--color-text-light);
     line-height: var(--leading-relaxed);
+    text-indent: 2em;
   }
 
   .section-heading {
@@ -139,7 +140,7 @@ const featured = projects
     }
 
     .hero h1 {
-      font-size: var(--text-3xl);
+      font-size: var(--text-2xl);
     }
 
     .project-grid {

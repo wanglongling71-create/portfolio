@@ -1,6 +1,6 @@
 {
   "siteName": "Portfolio",
-  "fullName": "[汪珑玲]",
+  "fullName": "汪珑玲",
   "title": "光学工程硕士研究生",
   "tagline": "光伏电池仿真、光电器件研究、数据采集与实验设计",
 
@@ -61,9 +61,7 @@
     "school": "[ 柔性电子（未来技术）学院], [南京工业大学]",
     "location": "[江苏省南京市新模范马路5号,中国 ]",
     "socialLinks": [
-      { "label": "GitHub", "url": "https://github.com/[username]" },
-      { "label": "Google Scholar", "url": "https://scholar.google.com/" },
-      { "label": "ResearchGate", "url": "https://researchgate.net/" }
+      { "label": "GitHub", "url": "http://wanglongling71-creat.github.com" }
     ]
   },
 
