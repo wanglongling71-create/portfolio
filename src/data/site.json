@@ -57,9 +57,9 @@
   ],
 
   "contact": {
-    "email": "[your.email@university.edu]",
-    "school": "[School / Institute Name], [University Name]",
-    "location": "[City, Province, China]",
+    "email": "[18269706540@163.com]",
+    "school": "[ 柔性电子（未来技术）学院], [南京工业大学]",
+    "location": "[江苏省南京市新模范马路5号,中国 ]",
     "socialLinks": [
       { "label": "GitHub", "url": "https://github.com/[username]" },
       { "label": "Google Scholar", "url": "https://scholar.google.com/" },
@@ -67,5 +67,5 @@
     ]
   },
 
-  "footer": "© 2026 [Your Name]. All rights reserved."
+  "footer": "© 2026 [Longling Wang]. All rights reserved."
 }
