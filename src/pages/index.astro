@@ -33,7 +33,7 @@ const featured = projects
               title={project.data.title}
               description={project.data.description}
               tags={project.data.tags}
-              href={`/projects/${project.id}`}
+              href={import.meta.env.BASE_URL + 'projects/' + project.id}
             />
           ))}
         </div>
