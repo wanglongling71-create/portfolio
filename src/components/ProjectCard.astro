@@ -11,6 +11,7 @@ const { title, description, tags, href } = Astro.props;
 
 <article class="card">
   <a href={href} class="card-link">
+    <span class="label">Research Project</span>
     <h3>{title}</h3>
     <p>{description}</p>
   </a>
@@ -25,14 +26,14 @@ const { title, description, tags, href } = Astro.props;
   .card {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     padding: var(--space-6);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
   .card:hover {
+    border-color: var(--color-primary-light);
     box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
   }
 
   .card-link {
@@ -44,15 +45,18 @@ const { title, description, tags, href } = Astro.props;
     color: inherit;
   }
 
+  .label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+
   h3 {
     font-size: var(--text-lg);
     color: var(--color-primary);
-    margin-bottom: var(--space-2);
-    transition: color 0.2s;
-  }
-
-  .card-link:hover h3 {
-    color: var(--color-primary-light);
+    margin-bottom: var(--space-3);
   }
 
   p {
@@ -62,7 +66,7 @@ const { title, description, tags, href } = Astro.props;
   }
 
   .tags {
-    margin-top: var(--space-4);
+    margin-top: var(--space-5);
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
@@ -73,8 +77,9 @@ const { title, description, tags, href } = Astro.props;
     font-size: var(--text-xs);
     font-weight: var(--font-medium);
     color: var(--color-primary-light);
-    background-color: var(--color-primary-lighter);
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
     padding: var(--space-1) var(--space-3);
-    border-radius: 9999px;
+    border-radius: var(--radius-sm);
   }
 </style>

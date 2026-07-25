@@ -10,7 +10,6 @@ const { degree, school, period, details } = Astro.props;
 ---
 
 <div class="timeline-item">
-  <div class="timeline-marker" aria-hidden="true"></div>
   <div class="timeline-content">
     <span class="period">{period}</span>
     <h3>{degree}</h3>
@@ -21,52 +20,33 @@ const { degree, school, period, details } = Astro.props;
 
 <style>
   .timeline-item {
-    display: flex;
-    gap: var(--space-6);
-    position: relative;
+    border-left: 1px solid var(--color-border);
+    padding-left: var(--space-6);
     padding-bottom: var(--space-8);
+    position: relative;
   }
 
   .timeline-item:last-child {
     padding-bottom: 0;
   }
 
-  /* Vertical line */
-  .timeline-item:not(:last-child)::after {
+  .timeline-item::before {
     content: '';
     position: absolute;
-    left: 0.4375rem;
-    top: 1.5rem;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--color-border);
-  }
-
-  .timeline-marker {
-    flex-shrink: 0;
-    width: 1rem;
-    height: 1rem;
+    left: -0.25rem;
+    top: 0.35rem;
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 50%;
-    background-color: var(--color-primary-light);
-    border: 3px solid var(--color-primary-lighter);
-    margin-top: 0.25rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .timeline-content {
-    flex: 1;
-    min-width: 0;
+    background-color: var(--color-accent);
   }
 
   .period {
     display: inline-block;
+    font-family: var(--font-mono);
     font-size: var(--text-xs);
-    font-weight: var(--font-semibold);
-    color: var(--color-primary-light);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-1);
+    color: var(--color-accent);
+    margin-bottom: var(--space-2);
   }
 
   h3 {
@@ -85,11 +65,5 @@ const { degree, school, period, details } = Astro.props;
     font-size: var(--text-sm);
     color: var(--color-text);
     line-height: var(--leading-relaxed);
-  }
-
-  @media (max-width: 640px) {
-    .timeline-item {
-      gap: var(--space-4);
-    }
   }
 </style>

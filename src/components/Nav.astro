@@ -40,34 +40,29 @@ function isActive(href: string): boolean {
   nav ul {
     display: flex;
     list-style: none;
-    gap: var(--space-1);
+    gap: var(--space-4);
   }
 
   a {
     display: inline-block;
-    padding: var(--space-2) var(--space-3);
+    padding-block: var(--space-2);
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
     color: var(--color-text-light);
-    border-radius: var(--radius-md);
-    transition: color 0.2s, background-color 0.2s;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
   }
 
-  a:hover {
-    color: var(--color-primary-light);
-    background-color: var(--color-primary-lighter);
-  }
-
+  a:hover,
   a.active {
     color: var(--color-primary);
-    background-color: var(--color-primary-lighter);
+    border-color: var(--color-primary);
   }
 
   @media (max-width: 640px) {
     nav ul {
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 0;
+      gap: var(--space-4);
     }
   }
 </style>

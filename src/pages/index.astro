@@ -13,21 +13,27 @@ const featured = projects
 ---
 
 <BaseLayout title="首页">
-  <!-- Hero -->
   <section class="hero">
-  <div class="container">
-    <img src={import.meta.env.BASE_URL + '/avatar.jpg'} alt="头像" class="avatar" />
-    <h1>{site.fullName}</h1>
-    <p class="subtitle">{site.title}</p>
-    <p class="tagline">{site.tagline}</p>
-  </div>
-</section>
+    <div class="container hero-inner">
+      <div class="profile">
+        <img src={import.meta.env.BASE_URL + '/avater.jpg'} alt="汪珑玲头像" class="avatar" />
+        <div class="identity">
+          <p class="eyebrow">Academic Portfolio</p>
+          <h1>{site.fullName}</h1>
+          <p class="subtitle">{site.title}</p>
+        </div>
+      </div>
+      <p class="tagline">{site.tagline}</p>
+    </div>
+  </section>
 
-  <!-- Featured Projects -->
   {
     featured.length > 0 && (
       <section class="section container">
-        <h2>精选项目</h2>
+        <div class="section-heading">
+          <h2>精选项目</h2>
+          <a href={import.meta.env.BASE_URL + '/projects'}>全部项目</a>
+        </div>
         <div class="project-grid">
           {featured.map((project) => (
             <ProjectCard
@@ -38,9 +44,6 @@ const featured = projects
             />
           ))}
         </div>
-        <div class="view-all">
-          <a href={import.meta.env.BASE_URL + '/projects'}>查看全部项目 &rarr;</a>
-        </div>
       </section>
     )
   }
@@ -48,84 +51,90 @@ const featured = projects
 
 <style>
   .hero {
-    padding-block: var(--space-24);
-    text-align: center;
+    padding-block: var(--space-20) var(--space-16);
   }
-.avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: contain;  /* 改成 contain，不裁剪 */
-  background-color: var(--color-bg);
-  margin-bottom: var(--space-4);
-  border: 4px solid var(--color-primary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-.hero h1 {
+
+  .hero-inner {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-12);
+  }
+
+  .profile {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .avatar {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+
+  .hero h1 {
     font-size: var(--text-4xl);
-    color: var(--color-primary);
-    margin-bottom: var(--space-4);
-    animation: fadeInUp 0.6s ease-out;
+    margin-bottom: var(--space-3);
   }
 
   .subtitle {
-    font-size: var(--text-xl);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-3);
-    animation: fadeInUp 0.6s ease-out 0.1s both;
+    font-size: var(--text-lg);
+    color: var(--color-primary-light);
   }
 
   .tagline {
+    max-width: 42rem;
+    margin-top: var(--space-8);
     font-size: var(--text-lg);
     color: var(--color-text-light);
-    max-width: 36rem;
-    margin-inline: auto;
-    animation: fadeInUp 0.6s ease-out 0.2s both;
+    line-height: var(--leading-relaxed);
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-4);
   }
 
   h2 {
     font-size: var(--text-2xl);
-    margin-bottom: var(--space-8);
+  }
+
+  .section-heading a {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
   }
 
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--space-6);
-  }
-
-  .view-all {
-    margin-top: var(--space-8);
-    text-align: center;
-  }
-
-  .view-all a {
-    font-weight: var(--font-medium);
-    font-size: var(--text-sm);
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(1rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hero h1,
-    .subtitle,
-    .tagline {
-      animation: none;
-    }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5);
   }
 
   @media (max-width: 640px) {
     .hero {
-      padding-block: var(--space-16);
+      padding-block: var(--space-12);
+    }
+
+    .profile {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
     }
 
     .hero h1 {
