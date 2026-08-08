@@ -16,11 +16,6 @@ const featured = projects
   <section class="hero">
     <div class="container hero-inner">
       <div class="profile">
-        <img
-          src={import.meta.env.BASE_URL + '/avatar.jpg'}
-          alt="汪珑玲头像"
-          class="avatar"
-        />
         <div class="identity">
           <p class="eyebrow">Academic Portfolio</p>
           <h1>{site.fullName}</h1>
@@ -42,6 +37,11 @@ const featured = projects
             </a>
           </div>
         </div>
+        <img
+          src={import.meta.env.BASE_URL + '/avatar.jpg'}
+          alt="汪珑玲头像"
+          class="avatar"
+        />
       </div>
     </div>
   </section>
@@ -85,7 +85,7 @@ const featured = projects
 
   .profile {
     display: grid;
-    grid-template-columns: 8rem 1fr;
+    grid-template-columns: 1fr 8rem;
     align-items: center;
     gap: var(--space-6);
   }
@@ -222,6 +222,11 @@ const featured = projects
     .profile {
       grid-template-columns: 1fr;
       gap: var(--space-4);
+    }
+
+    .avatar {
+      order: -1;
+      justify-self: center;
     }
 
     .hero h1 {
