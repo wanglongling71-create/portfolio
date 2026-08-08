@@ -10,9 +10,6 @@ const { currentPath } = Astro.props;
 
 <header>
   <div class="inner container">
-    <a href={import.meta.env.BASE_URL} class="logo" aria-label="返回首页">
-      WLL
-    </a>
     <Nav {currentPath} />
   </div>
 </header>
@@ -29,35 +26,7 @@ const { currentPath } = Astro.props;
 
   .inner {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: var(--space-4);
-  }
-
-  .logo {
-    display: inline-flex;
-    align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
-  }
-
-  .logo:hover {
-    color: var(--color-bg);
-    background-color: var(--color-primary);
-  }
-
-  @media (max-width: 640px) {
-    .inner {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: var(--space-3);
-      padding-block: var(--space-3);
-    }
+    padding-block: var(--space-4);
   }
 </style>
