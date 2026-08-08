@@ -1,10 +1,12 @@
 ---
+import site from '../data/site.json';
+
 const year = new Date().getFullYear();
 ---
 
 <footer>
   <div class="container">
-    <p>&copy; {year} All rights reserved.</p>
+    <p>&copy; {year} {site.fullName}. All rights reserved.</p>
     <p class="credit">
       Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>
     </p>

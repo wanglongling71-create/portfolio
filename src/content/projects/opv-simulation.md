@@ -4,8 +4,6 @@ description: "基于 FDTD 和传输矩阵法的有机光伏电池光学模拟，
 tags: ["MATLAB", "FDTD", "OPV", "仿真计算"]
 featured: true
 date: 2025-09-01
-links:
-  paper: "https://doi.org/"
 ---
 
 ## 研究概述

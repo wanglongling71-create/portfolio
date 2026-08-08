@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wanglongling71-create.github.io/portfolio/sitemap.xml

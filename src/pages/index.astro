@@ -16,12 +16,24 @@ const featured = projects
   <section class="hero">
     <div class="container hero-inner">
       <div class="profile">
-        <img src={import.meta.env.BASE_URL + '/avater.jpg'} alt="汪珑玲头像" class="avatar" />
+        <img
+          src={import.meta.env.BASE_URL + '/avatar.jpg'}
+          alt="汪珑玲头像"
+          class="avatar"
+        />
         <div class="identity">
           <p class="eyebrow">Academic Portfolio</p>
           <h1>{site.fullName}</h1>
-          <p class="subtitle">光学工程 · 研究生</p>
-          <p class="research">研究方向：光伏电池模拟，光电器件性能优化</p>
+          <p class="subtitle">{site.title}</p>
+          <p class="research">{site.tagline}</p>
+          <div class="cta">
+            <a href={import.meta.env.BASE_URL + '/projects'} class="btn btn-primary">
+              查看项目
+            </a>
+            <a href={import.meta.env.BASE_URL + '/contact'} class="btn btn-secondary">
+              联系我
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -32,7 +44,7 @@ const featured = projects
       <section class="section container">
         <div class="section-heading">
           <h2>精选项目</h2>
-          <a href={import.meta.env.BASE_URL + '/projects'}>全部项目</a>
+          <a href={import.meta.env.BASE_URL + '/projects'}>全部项目 &rarr;</a>
         </div>
         <div class="project-grid">
           {featured.map((project) => (
@@ -52,6 +64,11 @@ const featured = projects
 <style>
   .hero {
     padding-block: var(--space-20) var(--space-16);
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-lighter) 0%,
+      var(--color-bg) 100%
+    );
   }
 
   .hero-inner {
@@ -101,7 +118,47 @@ const featured = projects
     font-size: var(--text-base);
     color: var(--color-text-light);
     line-height: var(--leading-relaxed);
-    text-indent: 2em;
+  }
+
+  .cta {
+    margin-top: var(--space-8);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    transition: background-color 0.2s ease, border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-light);
+    color: #ffffff;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-primary-light);
+    color: var(--color-primary);
   }
 
   .section-heading {
