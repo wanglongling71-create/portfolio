@@ -39,6 +39,36 @@ import site from '../data/site.json';
       ))}
     </ul>
   </section>
+
+  <!-- Publications -->
+  <section class="section container">
+    <h2>论文发表</h2>
+    {
+      site.publications.length > 0 ? (
+        <ol class="publications">
+          {site.publications.map((pub) => (
+            <li class="publication">
+              <p class="pub-title">{pub.title}</p>
+              <p class="pub-meta">
+                {pub.authors} · {pub.journal} · {pub.year}
+              </p>
+              {pub.doi && (
+                <a
+                  href={`https://doi.org/${pub.doi}`}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  DOI: {pub.doi}
+                </a>
+              )}
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <p class="pub-empty">论文成果整理中，将陆续更新。</p>
+      )
+    }
+  </section>
 </BaseLayout>
 
 <style>
@@ -81,11 +111,39 @@ import site from '../data/site.json';
     border-radius: var(--radius-sm);
   }
 
+  .publications {
+    list-style: none;
+    max-width: 40rem;
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .publication {
+    padding: var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .pub-title {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .pub-meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-2);
+  }
+
+  .pub-empty {
+    color: var(--color-text-light);
+  }
+
   @media (max-width: 640px) {
     .interests {
       flex-direction: column;
     }
   }
 </style>
-
-

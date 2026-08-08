@@ -26,12 +26,19 @@ const featured = projects
           <h1>{site.fullName}</h1>
           <p class="subtitle">{site.title}</p>
           <p class="research">{site.tagline}</p>
+          <p class="job-intent">
+            <span class="job-intent-label">{site.jobIntention.label}</span>
+            {site.jobIntention.position}
+          </p>
           <div class="cta">
             <a href={import.meta.env.BASE_URL + '/projects'} class="btn btn-primary">
               查看项目
             </a>
             <a href={import.meta.env.BASE_URL + '/contact'} class="btn btn-secondary">
               联系我
+            </a>
+            <a href={import.meta.env.BASE_URL + '/resume.doc'} class="btn btn-secondary" download>
+              下载简历
             </a>
           </div>
         </div>
@@ -118,6 +125,27 @@ const featured = projects
     font-size: var(--text-base);
     color: var(--color-text-light);
     line-height: var(--leading-relaxed);
+  }
+
+  .job-intent {
+    margin-top: var(--space-6);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+  }
+
+  .job-intent-label {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    background-color: var(--color-primary-lighter);
+    border: 1px solid var(--color-border);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 9999px;
   }
 
   .cta {

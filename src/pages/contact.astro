@@ -9,6 +9,28 @@ import site from '../data/site.json';
     <h1 class="page-title">联系我</h1>
 
     <div class="contact-grid">
+      <!-- Job Intention -->
+      <div class="contact-card job-intention">
+        <span class="icon" aria-hidden="true">&#127891;</span>
+        <span class="label">{site.jobIntention.label}</span>
+        <span class="value">{site.jobIntention.position}</span>
+      </div>
+
+      <!-- Phone -->
+      <ContactLink
+        label="电话"
+        value={site.contact.phone}
+        href={`tel:${site.contact.phone}`}
+        icon="&#128222;"
+      />
+
+      <!-- WeChat -->
+      <div class="contact-card">
+        <span class="icon" aria-hidden="true">&#128172;</span>
+        <span class="label">微信</span>
+        <span class="value">{site.contact.wechat}（{site.contact.wechatNote}）</span>
+      </div>
+
       <!-- Email -->
       <ContactLink
         label="邮箱"
@@ -40,6 +62,17 @@ import site from '../data/site.json';
           icon="&#128279;"
         />
       ))}
+
+      <!-- Resume -->
+      <a
+        href={import.meta.env.BASE_URL + '/resume.doc'}
+        class="contact-card resume-link"
+        download
+      >
+        <span class="icon" aria-hidden="true">&#128196;</span>
+        <span class="label">简历下载</span>
+        <span class="value">汪珑玲 个人简历（光伏方向）</span>
+      </a>
     </div>
   </section>
 </BaseLayout>
@@ -81,5 +114,16 @@ import site from '../data/site.json';
     font-weight: var(--font-medium);
     color: var(--color-primary);
     word-break: break-all;
+  }
+
+  .contact-card.resume-link {
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-card.resume-link:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-sm);
+    color: inherit;
   }
 </style>
