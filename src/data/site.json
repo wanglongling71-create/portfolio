@@ -19,7 +19,7 @@
     { "label": "联系", "href": "/contact" }
   ],
 
-  "intro": "光学工程专业研究生，研究方向为光伏电池的光学仿真与器件优化，熟练运用 MATLAB、FDTD 和传输矩阵法（TMM）进行仿真模拟，掌握 LabVIEW 实验测控系统开发及 AutoCAD 光学制图，致力于将数值仿真与实验表征相结合，推动光伏器件的性能提升。",
+  "intro": "读研期间主要研究方向为钙钛矿、有机光伏电池的光学模拟仿真与器件优化，1、积累了有关 MATLAB 传输矩阵算法、FDTD 有限元算法的模拟方法。2、掌握 LabVIEW 实验操作系统搭建和使用以及 AutoCAD 光学制图等技能。3、了解有关钙钛矿 LED 相关知识。",
 
   "education": [
     {
@@ -51,11 +51,11 @@
     },
     {
       "category": "设计制图",
-      "items": ["AutoCAD", "SolidWorks 基础", "Zemax OpticStudio 基础"]
+      "items": ["AutoCAD", "SolidWorks 基础"]
     },
     {
       "category": "实验测控",
-      "items": ["LabVIEW", "NI-DAQ 数据采集", "光谱测量", "源表 (SourceMeter)"]
+      "items": ["LabVIEW", "光谱测量", "超快光谱测试", "源表 (SourceMeter)"]
     },
     {
       "category": "专业知识",

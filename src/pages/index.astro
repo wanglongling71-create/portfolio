@@ -86,13 +86,14 @@ const featured = projects
   .profile {
     display: grid;
     grid-template-columns: 1fr 8rem;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-6);
   }
 
   .avatar {
     width: 8rem;
     height: 8rem;
+    margin-top: -4rem;
     border-radius: 50%;
     object-fit: cover;
     object-position: center 20%;
@@ -227,6 +228,7 @@ const featured = projects
     .avatar {
       order: -1;
       justify-self: center;
+      margin-top: 0;
     }
 
     .hero h1 {
