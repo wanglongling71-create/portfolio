@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://WLL.github.io',
+  site: 'https://wanglongling71-create.github.io',
   base: '/portfolio',
 });
