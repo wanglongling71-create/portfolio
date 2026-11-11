@@ -63,9 +63,15 @@ const { title, tags, links, period, figures } = project.data;
     <!-- Project figures -->
     {
       figures.length > 0 && (
-        <section class="project-figures" aria-label="项目图像">
+        <section
+          class:list={[
+            'project-figures',
+            { 'has-multiple': figures.length > 1 },
+          ]}
+          aria-label="项目图像"
+        >
           {figures.map((figure) => (
-            <figure class="project-figure">
+            <figure class:list={['project-figure', { wide: figure.wide }]}>
               <a
                 href={withBase(figure.src)}
                 target="_blank"
@@ -179,10 +185,6 @@ const { title, tags, links, period, figures } = project.data;
     border-radius: var(--radius-md);
   }
 
-  .project-figure:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-  }
-
   .project-figure a {
     display: flex;
     min-height: 13rem;
@@ -200,8 +202,19 @@ const { title, tags, links, period, figures } = project.data;
     max-height: 18rem;
   }
 
-  .project-figure:last-child:nth-child(odd) img {
+  .project-figure.wide {
+    grid-column: 1 / -1;
+  }
+
+  .project-figure.wide img {
     max-height: 28rem;
+  }
+
+  .project-figures.has-multiple
+    .project-figure:last-child:nth-child(odd):not(.wide) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - var(--space-4) / 2);
   }
 
   .project-figure a:hover img {
@@ -269,5 +282,12 @@ const { title, tags, links, period, figures } = project.data;
     color: var(--color-text-light);
     font-style: italic;
     margin-bottom: var(--space-4);
+  }
+
+  @media (max-width: 640px) {
+    .project-figures.has-multiple
+      .project-figure:last-child:nth-child(odd):not(.wide) {
+      width: 100%;
+    }
   }
 </style>

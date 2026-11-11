@@ -21,6 +21,7 @@ figures:
     caption: "图 3｜器件内部电场强度分布随波长与位置的变化"
     width: 578
     height: 451
+    wide: true
 ---
 
 ## 项目概述

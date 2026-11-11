@@ -5,6 +5,22 @@ tags: ["TPC/TPV", "载流子动力学", "测试仪器搭建", "示波器", "OPV"
 featured: true
 date: 2025-09-01
 period: "2025.09 — 至今"
+figures:
+  - src: "/projects/tpc-tpv-instrument-setup.png"
+    alt: "TPC/TPV 测试系统仪器与光路实景"
+    caption: "图 1｜TPC/TPV 测试系统仪器与光路实景"
+    width: 300
+    height: 223
+  - src: "/projects/tpc-tpv-system-diagram.png"
+    alt: "TPC/TPV 系统结构框图，展示飞秒激光、白光光源、样品与示波器之间的光路和信号连接"
+    caption: "图 2｜TPC/TPV 系统结构框图（TPV 模式）"
+    width: 316
+    height: 223
+  - src: "/projects/tpc-tpv-transient-response.png"
+    alt: "归一化瞬态光电压衰减曲线与拟合结果"
+    caption: "图 3｜归一化瞬态光电压（TPV）衰减曲线与拟合结果"
+    width: 285
+    height: 218
 links:
   paper: "https://doi.org/10.1002/smtd.70906"
 ---

@@ -18,6 +18,7 @@ const projects = defineCollection({
           caption: z.string(),
           width: z.number().optional(),
           height: z.number().optional(),
+          wide: z.boolean().default(false),
         })
       )
       .default([]),

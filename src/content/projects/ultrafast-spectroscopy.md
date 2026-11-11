@@ -11,6 +11,7 @@ figures:
     caption: "图 4｜飞秒瞬态吸收（fs-TA）泵浦—探测光路示意图；红色箭头为主要光路，黄色框为关键耦合位置"
     width: 547
     height: 382
+    wide: true
 links:
   paper: "https://doi.org/10.1002/smll.202514912"
 ---
