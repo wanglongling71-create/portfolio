@@ -30,14 +30,31 @@ import site from '../data/site.json';
     </div>
   </section>
 
-  <!-- Research Interests -->
+  <!-- Internship Timeline -->
   <section class="section container">
-    <h2>研究方向</h2>
-    <ul class="interests">
-      {site.researchInterests.map((interest) => (
-        <li>{interest}</li>
+    <h2>实习经历</h2>
+    <div class="timeline">
+      {site.experience.map((item) => (
+        <TimelineItem
+          degree={item.role}
+          school={item.organization}
+          period={item.period}
+          details={item.details}
+        />
       ))}
-    </ul>
+    </div>
+  </section>
+
+  <!-- Research Interests -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>研究方向</h2>
+      <ul class="interests">
+        {site.researchInterests.map((interest) => (
+          <li>{interest}</li>
+        ))}
+      </ul>
+    </div>
   </section>
 
   <!-- Publications -->

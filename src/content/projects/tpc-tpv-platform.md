@@ -1,32 +1,32 @@
 ---
-title: "瞬态光电流/光电压（TPC/TPV）测试平台搭建"
-description: "面向光伏器件载流子动力学表征，主导搭建 TPC/TPV 测试平台，完成光脉冲激励下电流/电压瞬态响应的采集与分析。"
-tags: ["TPC/TPV", "载流子动力学", "光路搭建", "示波器", "OPV"]
+title: "瞬态光电流/光电压（TPC/TPV）测试仪器搭建"
+description: "面向光伏器件载流子动力学表征，主导搭建 TPC/TPV 测试仪器，完成光脉冲激励下电流/电压瞬态响应的采集与分析，可实现微秒级复合寿命与亚微秒电荷提取时间测试。"
+tags: ["TPC/TPV", "载流子动力学", "测试仪器搭建", "示波器", "OPV"]
 featured: true
 date: 2025-09-01
-period: "2025.09 — 2026.04"
+period: "2025.09 — 至今"
 links:
   paper: "https://doi.org/10.1002/smtd.70906"
 ---
 
 ## 项目概述
 
-面向光伏器件载流子动力学表征，主导搭建瞬态光电流/光电压（TPC/TPV）测试平台，完成光脉冲激励下器件电流、电压瞬态响应的采集与分析，为有机光伏材料的载流子复合与提取过程研究提供实验手段。
+面向光伏器件载流子动力学表征，主导搭建瞬态光电流/光电压（TPC/TPV）测试仪器，完成光脉冲激励下器件电流、电压瞬态响应的采集与分析，为有机光伏材料的载流子复合与提取过程研究提供实验手段。
 
 ## 主要工作
 
-1. 负责整个测量系统搭建与光路优化，包括白光、激光光路准直，光斑对准，以及示波器触发与采集参数优化。
+1. 负责整个测量系统搭建与光路优化，包括白光、激光光路准直，光斑对准、示波器触发与采集参数优化。
 2. 建立光脉冲激励下器件电流/电压瞬态响应的采集与分析流程。
 3. 针对有机光伏材料开展载流子动力学测试，提取复合寿命与电荷提取时间等关键参数。
 
 ## 性能指标
 
-- **TPV**：可实现有机光伏材料载流子复合寿命的微秒量级测试。
+- **TPV**：可实现有机光伏材料载流子复合寿命达微秒量级测试。
 - **TPC**：可实现电荷提取时间达零点几微秒的瞬态电流测试。
 
 ## 相关成果
 
-相关研究成果以题为 *Sequential Processing Leaves Trace A-D-A-type Acceptor as a Bifunctional Buried Interlayer for Efficient and Stable Inverted Organic Solar Cells* 的论文发表于 **Small Methods**。
+相关研究成果以题为 *Sequential Processing Leaves Trace A-D-A-type Acceptor as a Bifunctional Buried Interlayer for Efficient and Stable Inverted Organic Solar Cells* 的论文发表于 **Small 系列期刊（Small Methods）**。
 
 ## 使用技能
 
