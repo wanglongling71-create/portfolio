@@ -9,6 +9,7 @@ const projects = defineCollection({
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
     date: z.coerce.date().optional(),
+    period: z.string().optional(),
     links: z
       .object({
         paper: z.string().url().optional(),

@@ -4,14 +4,15 @@ interface Props {
   description: string;
   tags: string[];
   href: string;
+  period?: string;
 }
 
-const { title, description, tags, href } = Astro.props;
+const { title, description, tags, href, period } = Astro.props;
 ---
 
 <article class="card">
   <a href={href} class="card-link">
-    <span class="label">Research Project</span>
+    <span class="label">Research Project{period ? ` · ${period}` : ''}</span>
     <h3>{title}</h3>
     <p>{description}</p>
   </a>

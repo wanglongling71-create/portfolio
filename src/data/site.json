@@ -63,7 +63,22 @@
     }
   ],
 
-  "publications": [],
+  "publications": [
+    {
+      "title": "Tuning Photophysical Conflict Into Synergy: Stereoelectronic Planarity Disruption Unlocks Concurrent Aggregation-Enhanced ROS and NIR-II Fluorescence",
+      "authors": "Jie Liu, Dalong Ma, Wen Li, Xunwen Zhang, Jiangwei Cui, Mengjie Zhang, Longling Wang, et al.",
+      "journal": "Small",
+      "year": "2026",
+      "doi": "10.1002/smll.202514912"
+    },
+    {
+      "title": "Sequential Processing Leaves Trace A-D-A-type Acceptor as a Bifunctional Buried Interlayer for Efficient and Stable Inverted Organic Solar Cells",
+      "authors": "Jiaqi Hu, Chengcheng Li, Longfei Jia, Jianqi Zhang, Yuting Wang, Yu Xiao, Longling Wang, et al.",
+      "journal": "Small Methods",
+      "year": "2026",
+      "doi": "10.1002/smtd.70906"
+    }
+  ],
 
   "contact": {
     "email": "18269706540@163.com",

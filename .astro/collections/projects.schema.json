@@ -37,6 +37,9 @@
             }
           ]
         },
+        "period": {
+          "type": "string"
+        },
         "links": {
           "type": "object",
           "properties": {

@@ -15,7 +15,7 @@ if (!project) {
 }
 
 const { Content } = await render(project);
-const { title, tags, links } = project.data;
+const { title, tags, links, period } = project.data;
 ---
 
 <BaseLayout title={title}>
@@ -26,6 +26,7 @@ const { title, tags, links } = project.data;
     <!-- Header -->
     <header class="project-header">
       <h1>{title}</h1>
+      {period && <p class="project-period">{period}</p>}
       {
         tags.length > 0 && (
           <div class="tags">
@@ -82,7 +83,15 @@ const { title, tags, links } = project.data;
   }
 
   .project-header h1 {
+    margin-bottom: var(--space-2);
+    text-wrap: balance;
+  }
+
+  .project-period {
     margin-bottom: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
   }
 
   .tags {
