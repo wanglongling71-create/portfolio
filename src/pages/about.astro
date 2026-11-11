@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TimelineItem from '../components/TimelineItem.astro';
 import site from '../data/site.json';
+import { withBase } from '../lib/site-paths';
 ---
 
 <BaseLayout title="关于我">
@@ -9,7 +10,27 @@ import site from '../data/site.json';
   <section class="section container">
     <h1 class="page-title">关于我</h1>
     <div class="intro">
-      <p>{site.intro}</p>
+      <div class="intro-copy">
+        <p>{site.intro}</p>
+      </div>
+      <figure class="intro-photo">
+        <a
+          href={withBase('/marathon.jpg')}
+          target="_blank"
+          rel="noopener"
+          title="查看原图"
+        >
+          <img
+            src={withBase('/marathon.jpg')}
+            alt="汪珑玲参加马拉松比赛后的留影"
+            width="1279"
+            height="1704"
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+        <figcaption>马拉松完赛留影</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -90,7 +111,11 @@ import site from '../data/site.json';
 
 <style>
   .intro {
-    max-width: 40rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 16rem;
+    align-items: start;
+    gap: var(--space-8);
+    max-width: 48rem;
     margin-inline: auto;
     text-align: left;
   }
@@ -100,6 +125,41 @@ import site from '../data/site.json';
     line-height: var(--leading-relaxed);
     color: var(--color-text);
     text-indent: 2em;
+  }
+
+  .intro-photo {
+    margin: 0;
+  }
+
+  .intro-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center 38%;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .intro-photo figcaption {
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-light);
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .intro {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    .intro-photo {
+      order: -1;
+      justify-self: center;
+      width: min(100%, 18rem);
+    }
   }
 
   h2 {
