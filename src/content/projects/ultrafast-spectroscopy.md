@@ -6,12 +6,26 @@ featured: true
 date: 2025-07-01
 period: "2025.07 — 至今"
 figures:
+  - src: "/projects/fs-ta-component-signals.png"
+    alt: "PM6:eC9 体系的瞬态吸收光谱二维图，标出 GSB_D、GSB_A、EA、LE 与 DSE 信号区域"
+    caption: "图 1｜PM6:eC9 体系的瞬态吸收光谱组分信号（800 nm 激发）"
+    width: 465
+    height: 415
+  - src: "/projects/fs-ta-time-resolved-spectra.png"
+    alt: "不同泵浦—探测延时下的瞬态吸收光谱，横轴为波长，纵轴为 ΔT/T"
+    caption: "图 2｜不同泵浦—探测延时下的瞬态吸收光谱"
+    width: 570
+    height: 449
+  - src: "/projects/fs-ta-kinetics-curve.png"
+    alt: "不同样品和激发条件下的瞬态吸收动力学衰减曲线"
+    caption: "图 3｜不同样品及激发条件下的 fs-TA 动力学衰减曲线"
+    width: 555
+    height: 499
   - src: "/projects/fs-ta-pump-probe-layout.png"
     alt: "飞秒瞬态吸收泵浦探测光路实景"
-    caption: "图 4｜飞秒瞬态吸收（fs-TA）泵浦—探测光路示意图；红色箭头为主要光路，黄色框为关键耦合位置"
+    caption: "图 4｜飞秒瞬态吸收（fs-TA）泵浦—探测光路实景；红色箭头为主要光路，黄色框为关键耦合位置"
     width: 547
     height: 382
-    wide: true
 links:
   paper: "https://doi.org/10.1002/smll.202514912"
 ---
