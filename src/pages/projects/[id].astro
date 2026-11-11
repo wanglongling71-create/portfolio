@@ -16,7 +16,7 @@ if (!project) {
 }
 
 const { Content } = await render(project);
-const { title, tags, links, period } = project.data;
+const { title, tags, links, period, figures } = project.data;
 ---
 
 <BaseLayout title={title}>
@@ -57,6 +57,34 @@ const { title, tags, links, period } = project.data;
             </a>
           )}
         </div>
+      )
+    }
+
+    <!-- Project figures -->
+    {
+      figures.length > 0 && (
+        <section class="project-figures" aria-label="项目图像">
+          {figures.map((figure) => (
+            <figure class="project-figure">
+              <a
+                href={withBase(figure.src)}
+                target="_blank"
+                rel="noopener"
+                title="打开原图"
+              >
+                <img
+                  src={withBase(figure.src)}
+                  alt={figure.alt}
+                  width={figure.width}
+                  height={figure.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>{figure.caption}</figcaption>
+            </figure>
+          ))}
+        </section>
       )
     }
 
@@ -134,6 +162,58 @@ const { title, tags, links, period } = project.data;
     border-color: var(--color-primary-light);
     background-color: var(--color-primary-lighter);
     color: var(--color-primary);
+  }
+
+  .project-figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
+  }
+
+  .project-figure {
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .project-figure:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .project-figure a {
+    display: flex;
+    min-height: 13rem;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3);
+    background-color: #ffffff;
+  }
+
+  .project-figure img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 18rem;
+  }
+
+  .project-figure:last-child:nth-child(odd) img {
+    max-height: 28rem;
+  }
+
+  .project-figure a:hover img {
+    opacity: 0.92;
+  }
+
+  .project-figure figcaption {
+    padding: var(--space-3) var(--space-4);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-light);
   }
 
   /* Prose styling for Markdown content */

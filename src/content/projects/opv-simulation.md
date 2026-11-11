@@ -5,6 +5,22 @@ tags: ["TMM", "MATLAB", "TCAD", "半透明光伏", "实验验证"]
 featured: true
 date: 2024-09-01
 period: "2024.09 — 至今"
+figures:
+  - src: "/projects/opv-device-structure.png"
+    alt: "半透明光伏器件层状结构"
+    caption: "图 1｜半透明光伏器件层状结构图"
+    width: 285
+    height: 257
+  - src: "/projects/opv-absorption-spectrum.png"
+    alt: "叶绿素、PM6:BTP-eC9 与 AM1.5G 的归一化吸收光谱"
+    caption: "图 2｜材料归一化吸收光谱与 AM1.5G 太阳光谱对照"
+    width: 478
+    height: 366
+  - src: "/projects/opv-electric-field-distribution.png"
+    alt: "器件内部不同波长下的电场强度分布"
+    caption: "图 3｜器件内部电场强度分布随波长与位置的变化"
+    width: 578
+    height: 451
 ---
 
 ## 项目概述

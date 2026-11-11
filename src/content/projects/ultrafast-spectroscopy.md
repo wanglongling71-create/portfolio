@@ -5,6 +5,12 @@ tags: ["fs-TA", "TRPL", "超快光谱", "OPV", "钙钛矿"]
 featured: true
 date: 2025-07-01
 period: "2025.07 — 至今"
+figures:
+  - src: "/projects/fs-ta-pump-probe-layout.png"
+    alt: "飞秒瞬态吸收泵浦探测光路实景"
+    caption: "图 4｜飞秒瞬态吸收（fs-TA）泵浦—探测光路示意图；红色箭头为主要光路，黄色框为关键耦合位置"
+    width: 547
+    height: 382
 links:
   paper: "https://doi.org/10.1002/smll.202514912"
 ---
