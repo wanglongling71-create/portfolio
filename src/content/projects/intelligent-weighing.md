@@ -5,6 +5,17 @@ tags: ["LabVIEW", "光纤传感", "动态称重", "数据采集", "大创项目"
 featured: true
 date: 2022-09-01
 period: "2022.09 — 2023.12"
+figures:
+  - src: "/projects/intelligent-weighing-lab-setup.png"
+    alt: "高精度光纤智能感知称重系统实验室测试仪器与光路搭建实景"
+    caption: "图 1｜实验室测试仪器与光路搭建"
+    width: 386
+    height: 242
+  - src: "/projects/intelligent-weighing-certificate.png"
+    alt: "安庆师范大学大学生创新创业训练计划项目结题证书，项目名称为高精度光纤智能感知称重系统"
+    caption: "图 2｜国家级大学生创新创业训练计划项目结题证书"
+    width: 1098
+    height: 756
 ---
 
 ## 项目概述

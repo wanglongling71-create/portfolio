@@ -17,21 +17,6 @@ import { withBase } from '../lib/site-paths';
         <span class="value">{site.jobIntention.position}</span>
       </div>
 
-      <!-- Phone -->
-      <ContactLink
-        label="电话"
-        value={site.contact.phone}
-        href={`tel:${site.contact.phone}`}
-        icon="&#128222;"
-      />
-
-      <!-- WeChat -->
-      <div class="contact-card">
-        <span class="icon" aria-hidden="true">&#128172;</span>
-        <span class="label">微信</span>
-        <span class="value">{site.contact.wechat}</span>
-      </div>
-
       <!-- Email -->
       <ContactLink
         label="邮箱"

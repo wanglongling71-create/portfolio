@@ -21,6 +21,11 @@ figures:
     caption: "图 3｜器件内部电场强度分布随波长与位置的变化"
     width: 578
     height: 451
+  - src: "/projects/opv-simulation-principle.png"
+    alt: "半透明光伏器件模拟原理图，展示器件结构输入、TMM 光学模拟、结构优化以及透射率和 APT 实验验证结果"
+    caption: "图 4｜半透明光伏器件模拟原理图：TMM 光学模拟、器件结构优化与实验验证流程"
+    width: 1468
+    height: 720
 ---
 
 ## 项目概述
