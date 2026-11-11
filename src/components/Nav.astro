@@ -1,21 +1,23 @@
 ---
+import { withBase } from '../lib/site-paths';
+
 interface Props {
   currentPath: string;
 }
 
 const { currentPath } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const homePath = withBase('/');
 
 const navItems = [
-  { label: '首页', href: base },
-  { label: '关于', href: `${base}/about` },
-  { label: '技能', href: `${base}/skills` },
-  { label: '项目', href: `${base}/projects` },
-  { label: '联系', href: `${base}/contact` },
+  { label: '首页', href: homePath },
+  { label: '关于', href: withBase('/about') },
+  { label: '技能', href: withBase('/skills') },
+  { label: '项目', href: withBase('/projects') },
+  { label: '联系', href: withBase('/contact') },
 ];
 
 function isActive(href: string): boolean {
-  if (href === base) return currentPath === base || currentPath === '/';
+  if (href === homePath) return currentPath === homePath || currentPath === '/';
   return currentPath.startsWith(href);
 }
 ---

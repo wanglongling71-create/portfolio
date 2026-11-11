@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
 import site from '../data/site.json';
+import { withBase } from '../lib/site-paths';
 
 const projects = await getCollection('projects');
 const featured = projects
@@ -20,20 +21,27 @@ const featured = projects
           <p class="eyebrow">Academic Portfolio</p>
           <h1>{site.fullName}</h1>
           <p class="subtitle">专业：{site.major} ｜ 学历：{site.degree}</p>
-          <p class="research">研究方向：{site.tagline}</p>
+          <div class="research">
+            <span class="research-label">研究方向：</span>
+            <ol class="research-list">
+              {site.researchDirections.map((direction) => (
+                <li>{direction.number}、{direction.before}{direction.highlight && <strong>{direction.highlight}</strong>}{direction.after}</li>
+              ))}
+            </ol>
+          </div>
           <p class="job-intent">
             <span class="job-intent-label">{site.jobIntention.label}</span>
             {site.jobIntention.position}
           </p>
           <div class="cta">
-            <a href={import.meta.env.BASE_URL + '/projects'} class="btn btn-primary">
+            <a href={withBase('/projects')} class="btn btn-primary">
               查看项目
             </a>
-            <a href={import.meta.env.BASE_URL + '/contact'} class="btn btn-secondary">
+            <a href={withBase('/contact')} class="btn btn-secondary">
               联系我
             </a>
             <a
-              href={import.meta.env.BASE_URL + '/汪珑玲-光学工程师.pdf'}
+              href={withBase('/汪珑玲-光学工程师.pdf')}
               class="btn btn-secondary"
               download="汪珑玲-光学工程师.pdf"
             >
@@ -42,7 +50,7 @@ const featured = projects
           </div>
         </div>
         <img
-          src={import.meta.env.BASE_URL + '/avatar.jpg'}
+          src={withBase('/avatar.jpg')}
           alt="汪珑玲头像"
           class="avatar"
         />
@@ -55,7 +63,7 @@ const featured = projects
       <section class="section container">
         <div class="section-heading">
           <h2>精选项目</h2>
-          <a href={import.meta.env.BASE_URL + '/projects'}>全部项目 &rarr;</a>
+          <a href={withBase('/projects')}>全部项目 &rarr;</a>
         </div>
         <div class="project-grid">
           {featured.map((project) => (
@@ -64,7 +72,7 @@ const featured = projects
               description={project.data.description}
               tags={project.data.tags}
               period={project.data.period}
-              href={import.meta.env.BASE_URL + '/projects/' + project.id}
+              href={withBase(`/projects/${project.id}`)}
             />
           ))}
         </div>
@@ -131,6 +139,26 @@ const featured = projects
     font-size: var(--text-base);
     color: var(--color-text-light);
     line-height: var(--leading-relaxed);
+  }
+
+  .research-label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+  }
+
+  .research-list {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .research-list li {
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
   }
 
   .job-intent {

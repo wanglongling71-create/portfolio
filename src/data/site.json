@@ -2,7 +2,21 @@
   "siteName": "Portfolio",
   "fullName": "汪珑玲",
   "title": "光学工程硕士研究生 · 2027 届",
-  "tagline": "光电器件仿真与表征 · fs-TA/TRPL 超快光谱 · TPC/TPV 载流子动力学测试",
+  "tagline": "新型光电器件光学模拟与制备 · 半导体器件电荷传输机制",
+  "researchDirections": [
+    {
+      "number": 1,
+      "before": "新型光电器件的",
+      "highlight": "光学模拟（基于MatLab转移矩阵算法、Ansys FDTD 有限元分析）",
+      "after": "及制备工艺的探索；"
+    },
+    {
+      "number": 2,
+      "before": "半导体器件电荷传输机制（基于光致发光、超快光谱、瞬态光电压/光电流等测试）的研究；",
+      "highlight": "",
+      "after": ""
+    }
+  ],
   "major": "光学工程",
   "degree": "硕士",
 

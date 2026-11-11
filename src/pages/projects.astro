@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
+import { withBase } from '../lib/site-paths';
 
 const projects = (await getCollection('projects')).sort(
   (a, b) => (b.data.date?.valueOf() || 0) - (a.data.date?.valueOf() || 0)
@@ -20,7 +21,7 @@ const projects = (await getCollection('projects')).sort(
               description={project.data.description}
               tags={project.data.tags}
               period={project.data.period}
-              href={import.meta.env.BASE_URL + '/projects/' + project.id}
+              href={withBase(`/projects/${project.id}`)}
             />
           ))}
         </div>
