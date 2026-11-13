@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://wanglongling71-create.github.io',
-  base: '/portfolio',
+  site: 'https://wanglongling.is-a.dev',
 });

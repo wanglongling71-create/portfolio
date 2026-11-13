@@ -40,6 +40,36 @@
         "period": {
           "type": "string"
         },
+        "figures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "number"
+              },
+              "height": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "src",
+              "alt",
+              "caption"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
         "links": {
           "type": "object",
           "properties": {

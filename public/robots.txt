@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wanglongling71-create.github.io/portfolio/sitemap.xml
+Sitemap: https://wanglongling.is-a.dev/sitemap.xml
